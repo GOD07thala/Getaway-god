@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>God Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-box {
+      background: #1e1e1e;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00f0ff;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      background: #00f0ff;
+      border: none;
+      padding: 10px;
+      color: black;
+      font-weight: bold;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login with Key</h2>
+    <input type="text" id="loginKey" placeholder="Enter Login Key" />
+    <button onclick="login()">Login</button>
+  </div>
+
+  <script>
+    function login() {
+      const key = document.getElementById('loginKey').value;
+      // Replace with real key verification logic
+      if (key === "ABC123") {
+        alert("Login Successful!");
+        window.location.href = "index.html";
+      } else {
+        alert("Invalid Key!");
+      }
+    }
+  </script>
+</body>
+</html>
