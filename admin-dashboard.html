@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="box">
+    <h2>Payment History</h2>
+    <ul id="historyList"></ul>
+  </div>
+  <script>
+    const payments = JSON.parse(localStorage.getItem("payments") || "[]");
+    const list = document.getElementById("historyList");
+    payments.forEach(p => {
+      list.innerHTML += `<li>₹${p.amount} to ${p.upi} (Order ID: ${p.orderid})</li>`;
+    });
+  </script>
+</body>
+</html>

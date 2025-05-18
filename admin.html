@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="box">
+    <h2>Admin Login</h2>
+    <form onsubmit="adminLogin(event)">
+      <input type="text" id="adminuser" placeholder="Username" required><br>
+      <input type="password" id="adminpass" placeholder="Password" required><br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  <script>
+    function adminLogin(e) {
+      e.preventDefault();
+      if (document.getElementById("adminuser").value === "admin" &&
+          document.getElementById("adminpass").value === "admin123") {
+        window.location.href = "admin-dashboard.html";
+      } else {
+        alert("Invalid credentials");
+      }
+    }
+  </script>
+</body>
+</html>

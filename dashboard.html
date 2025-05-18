@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard - Payment Gateway</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="box">
+    <h2>Payment Gateway</h2>
+    <form action="send.html" onsubmit="storePayment()">
+      <input type="text" id="upi" placeholder="Recipient UPI ID" required><br>
+      <input type="number" id="amount" placeholder="Amount (₹)" required><br>
+      <input type="text" id="orderid" readonly><br>
+      <button type="submit">Send Payment</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
