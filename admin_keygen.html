@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Key Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .admin-box {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ff99;
+    }
+    button {
+      background: #00ff99;
+      border: none;
+      padding: 10px;
+      color: black;
+      font-weight: bold;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-box">
+    <h2>Generate Login Key</h2>
+    <input type="number" id="expiry" placeholder="Expiry in Minutes" />
+    <button onclick="generateKey()">Generate Key</button>
+    <p id="output"></p>
+  </div>
+
+  <script>
+    function generateKey() {
+      const expiry = parseInt(document.getElementById("expiry").value) || 60;
+      const key = Math.random().toString(36).substr(2, 8).toUpperCase();
+      const expiresAt = new Date(Date.now() + expiry * 60000).toLocaleString();
+
+      document.getElementById("output").innerHTML =
+        `<strong>Key:</strong> ${key}<br><strong>Expires At:</strong> ${expiresAt}`;
+    }
+  </script>
+</body>
+</html>
